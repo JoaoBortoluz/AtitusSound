@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public class GenericEntity {
+public abstract class GenericEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.UUID)
 	private UUID uuid;
