@@ -62,16 +62,16 @@ public abstract class GenericController<TEntidade extends GenericEntity, TDto> {
 	
 	@GetMapping("/{uuid}")
 	public ResponseEntity<TEntidade> getById(@PathVariable UUID uuid) {
-		Optional<TEntidade> entidade;
+		Optional<TEntidade> entity;
 		try {
-			entidade = getService().findById(uuid);
+			entity = getService().findById(uuid);
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().header("error", e.getMessage()).build();		
 		}
-		if (entidade.isEmpty())
+		if (entity.isEmpty())
 			return ResponseEntity.notFound().build();
 		else
-			return ResponseEntity.ok(entidade.get());
+			return ResponseEntity.ok(entity.get());
 	}
 	
 	@GetMapping
