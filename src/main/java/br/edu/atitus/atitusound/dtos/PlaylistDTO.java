@@ -14,10 +14,6 @@ public class PlaylistDTO {
 		this.name = name;
 	}
 
-	public boolean isPublic_share() {
-		return public_share;
-	}
-
 	public void setPublic_share(boolean public_share) {
 		this.public_share = public_share;
 	}

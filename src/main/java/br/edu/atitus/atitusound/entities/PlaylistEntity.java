@@ -18,7 +18,7 @@ public class PlaylistEntity extends GenericEntity{
 	@JoinTable(name = "tb_playlist_music")
 	private List<MusicEntity> musics;
 
-	public boolean isPublic_share() {
+	public boolean getPublic_share() {
 		return public_share;
 	}
 
