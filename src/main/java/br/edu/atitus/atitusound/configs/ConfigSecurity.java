@@ -24,7 +24,7 @@ public class ConfigSecurity {
 			.csrf(csrf -> csrf.disable()) //func lambida
 			.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 			.authorizeHttpRequests(auth -> auth
-					.requestMatchers("/auth/**").permitAll()
+					.requestMatchers("/auth/**", "/swagger-ui*", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
 					.anyRequest().authenticated())
 			.addFilterBefore(authTokenFilter, UsernamePasswordAuthenticationFilter.class);
 		return http.build();
