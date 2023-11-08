@@ -14,7 +14,8 @@ import br.edu.atitus.atitusound.entities.GenericEntity;
 
 @NoRepositoryBean
 public interface GenericRepository<TEntidade extends GenericEntity> extends JpaRepository<TEntidade, UUID> {
-boolean existsByNameAndUuidNot(String name, UUID uuid);
+	
+	boolean existsByNameAndUuidNot(String name, UUID uuid);
 	
 	boolean existsByName(String name);
 	
